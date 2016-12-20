@@ -12,5 +12,14 @@ namespace dw6n1449
         private int val;
         private string face;
         // blah blah changes and some more again
+
+        private int getId() { return id; }
+        private void setId(int id) { this.id = id; }
+
+        private int getVal() { return val; }
+        private void setVal(int val) { this.val = val; }
+
+        private string getFace() { return face; }
+        private void setFace(string face) { this.face = face; }
     }
 }
