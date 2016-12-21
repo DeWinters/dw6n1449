@@ -60,6 +60,22 @@ namespace dw6n1449
             lblSuit2.Text = playerCard2.getSuit();
 
             lblPlayerScore.Text = score.ToString();
+
+            if(score > 21)                                                  /** hand status **/
+            {                                                               // bust actions
+                lblCondition.Text = "BUST! (you have gone over 21)";
+            }
+            else if(score == 21)
+            {                                                               // win actions
+                lblCondition.Text = "BLACKJACK! Congratulations!";
+            }
+            else
+            {                                                               // draw? actions
+                lblCondition.Text = "Would you like to hit or stay?";
+                // write HIT and STAY buttons
+            }
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)

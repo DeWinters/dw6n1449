@@ -41,6 +41,7 @@
             this.lblSuit2 = new System.Windows.Forms.Label();
             this.lblValue2 = new System.Windows.Forms.Label();
             this.lblPlayerScore = new System.Windows.Forms.Label();
+            this.lblCondition = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblValue1
@@ -160,11 +161,21 @@
             this.lblPlayerScore.TabIndex = 12;
             this.lblPlayerScore.Text = "label7";
             // 
+            // lblCondition
+            // 
+            this.lblCondition.AutoSize = true;
+            this.lblCondition.Location = new System.Drawing.Point(112, 195);
+            this.lblCondition.Name = "lblCondition";
+            this.lblCondition.Size = new System.Drawing.Size(35, 13);
+            this.lblCondition.TabIndex = 13;
+            this.lblCondition.Text = "label7";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 373);
+            this.Controls.Add(this.lblCondition);
             this.Controls.Add(this.lblPlayerScore);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -201,6 +212,7 @@
         private System.Windows.Forms.Label lblSuit2;
         private System.Windows.Forms.Label lblValue2;
         private System.Windows.Forms.Label lblPlayerScore;
+        private System.Windows.Forms.Label lblCondition;
     }
 }
 
