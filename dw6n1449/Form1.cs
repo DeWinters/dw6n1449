@@ -17,37 +17,16 @@ namespace dw6n1449
         {
             InitializeComponent();
 
-            int card1 = 13;
-            int card2 = 21;
+            btnStay.Visible = false;
+            btnHit.Visible = false;
+
             int score;
-            String connectionString = "Server=localhost;Port=3306;database=blackjack;Uid=root;password=secret";
-            MySqlConnection conn = new MySqlConnection(connectionString);
-            MySqlDataAdapter adptr = new MySqlDataAdapter();
-            MySqlCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM CARD WHERE id=" + card1;       /** Card1 Instantiation **/
-            conn.Open();
-            MySqlDataReader rdr = cmd.ExecuteReader();
+            Card playerCard1 = new Card();
+            playerCard1.getCard(2);                            
 
-            Card playerCard1 = new Card();                              
-            while (rdr.Read())
-            {
-                playerCard1.setVal(Convert.ToInt32(rdr["val"]));
-                playerCard1.setFace(rdr["face"].ToString());
-                playerCard1.setSuit(rdr["suit"].ToString());
-            }
-            conn.Close();
-
-            cmd.CommandText = "SELECT * FROM CARD WHERE id=" + card2;       /** Card2 Instantiation **/
-            conn.Open();
-            rdr = cmd.ExecuteReader();
             Card playerCard2 = new Card();
-            while (rdr.Read())
-            {
-                playerCard2.setVal(Convert.ToInt32(rdr["val"]));
-                playerCard2.setFace(rdr["face"].ToString());
-                playerCard2.setSuit(rdr["suit"].ToString());
-            }
+            playerCard2.getCard(20);
 
             score = playerCard1.getVal() + playerCard2.getVal();            /** PlayerScore **/
 
@@ -68,14 +47,15 @@ namespace dw6n1449
             else if(score == 21)
             {                                                               // win actions
                 lblCondition.Text = "BLACKJACK! Congratulations!";
+                btnHit.Visible = false;
+                btnStay.Visible = false;
             }
             else
             {                                                               // draw? actions
                 lblCondition.Text = "Would you like to hit or stay?";
-                // write HIT and STAY buttons
+                btnHit.Visible = true;
+                btnStay.Visible = true;
             }
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)

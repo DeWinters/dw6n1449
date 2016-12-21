@@ -42,6 +42,8 @@
             this.lblValue2 = new System.Windows.Forms.Label();
             this.lblPlayerScore = new System.Windows.Forms.Label();
             this.lblCondition = new System.Windows.Forms.Label();
+            this.btnHit = new System.Windows.Forms.Button();
+            this.btnStay = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblValue1
@@ -170,11 +172,31 @@
             this.lblCondition.TabIndex = 13;
             this.lblCondition.Text = "label7";
             // 
+            // btnHit
+            // 
+            this.btnHit.Location = new System.Drawing.Point(62, 253);
+            this.btnHit.Name = "btnHit";
+            this.btnHit.Size = new System.Drawing.Size(75, 23);
+            this.btnHit.TabIndex = 14;
+            this.btnHit.Text = "HIT";
+            this.btnHit.UseVisualStyleBackColor = true;
+            // 
+            // btnStay
+            // 
+            this.btnStay.Location = new System.Drawing.Point(174, 253);
+            this.btnStay.Name = "btnStay";
+            this.btnStay.Size = new System.Drawing.Size(75, 23);
+            this.btnStay.TabIndex = 15;
+            this.btnStay.Text = "Stay";
+            this.btnStay.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 373);
+            this.Controls.Add(this.btnStay);
+            this.Controls.Add(this.btnHit);
             this.Controls.Add(this.lblCondition);
             this.Controls.Add(this.lblPlayerScore);
             this.Controls.Add(this.label4);
@@ -213,6 +235,8 @@
         private System.Windows.Forms.Label lblValue2;
         private System.Windows.Forms.Label lblPlayerScore;
         private System.Windows.Forms.Label lblCondition;
+        private System.Windows.Forms.Button btnHit;
+        private System.Windows.Forms.Button btnStay;
     }
 }
 
