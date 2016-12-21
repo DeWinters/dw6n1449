@@ -17,7 +17,7 @@ namespace dw6n1449
         {
             InitializeComponent();
 
-            int card = 1;
+            int card = 5;
             String connectionString = "Server=localhost;Port=3306;database=blackjack;Uid=root;password=secret";
             MySqlConnection conn = new MySqlConnection(connectionString);
             //MySqlCommand cmd = new MySqlCommand();
@@ -28,7 +28,9 @@ namespace dw6n1449
             MySqlDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
-                lblOutput.Text = rdr["val"].ToString();
+                lblValue1.Text = rdr["val"].ToString();
+                lblFace1.Text = rdr["face"].ToString();
+                lblSuit1.Text = rdr["suit"].ToString();
             }
         }
 
