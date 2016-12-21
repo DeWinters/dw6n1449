@@ -17,8 +17,8 @@ namespace dw6n1449
         {
             InitializeComponent();
 
-            int card1 = 5;
-            int card2 = 2;
+            int card1 = 13;
+            int card2 = 21;
             int score;
             String connectionString = "Server=localhost;Port=3306;database=blackjack;Uid=root;password=secret";
             MySqlConnection conn = new MySqlConnection(connectionString);
@@ -58,6 +58,8 @@ namespace dw6n1449
             lblValue2.Text = playerCard2.getVal().ToString();              
             lblFace2.Text = playerCard2.getFace();
             lblSuit2.Text = playerCard2.getSuit();
+
+            lblPlayerScore.Text = score.ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
