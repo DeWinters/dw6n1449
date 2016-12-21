@@ -17,13 +17,13 @@ namespace dw6n1449
         {
             InitializeComponent();
 
-            int card = 5;
+            int card1 = 5;
+            int card2 = 2;
             String connectionString = "Server=localhost;Port=3306;database=blackjack;Uid=root;password=secret";
             MySqlConnection conn = new MySqlConnection(connectionString);
-            //MySqlCommand cmd = new MySqlCommand();
             MySqlDataAdapter adptr = new MySqlDataAdapter();
             MySqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM CARD WHERE id=" + card;
+            cmd.CommandText = "SELECT * FROM CARD WHERE id=" + card1;
             conn.Open();
             MySqlDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
@@ -32,6 +32,20 @@ namespace dw6n1449
                 lblFace1.Text = rdr["face"].ToString();
                 lblSuit1.Text = rdr["suit"].ToString();
             }
+            conn.Close();
+
+
+            cmd.CommandText = "SELECT * FROM CARD WHERE id=" + card2;
+            conn.Open();
+            rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                lblValue2.Text = rdr["val"].ToString();
+                lblFace2.Text = rdr["face"].ToString();
+                lblSuit2.Text = rdr["suit"].ToString();
+            }
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
