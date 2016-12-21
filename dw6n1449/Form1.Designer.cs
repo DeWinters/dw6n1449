@@ -40,6 +40,7 @@
             this.lblFace2 = new System.Windows.Forms.Label();
             this.lblSuit2 = new System.Windows.Forms.Label();
             this.lblValue2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblValue1
@@ -150,11 +151,21 @@
             this.lblValue2.TabIndex = 6;
             this.lblValue2.Text = "label1";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(106, 128);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "label7";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 373);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -189,6 +200,7 @@
         private System.Windows.Forms.Label lblFace2;
         private System.Windows.Forms.Label lblSuit2;
         private System.Windows.Forms.Label lblValue2;
+        private System.Windows.Forms.Label label7;
     }
 }
 
