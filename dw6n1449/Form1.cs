@@ -13,6 +13,8 @@ namespace dw6n1449
 {
     public partial class Form1 : Form
     {
+
+        int score;
         public Form1()
         {
             InitializeComponent();
@@ -20,23 +22,20 @@ namespace dw6n1449
             btnStay.Visible = false;
             btnHit.Visible = false;
 
-            int score;
+            Deck deck = new Deck();
+            
 
-            Card playerCard1 = new Card();
-            playerCard1.getCard(2);                            
+            for(int x=0; x < 52; x++)
+            {
+                Console.WriteLine(deck.deckArray[x]);
+            }
 
-            Card playerCard2 = new Card();
-            playerCard2.getCard(20);
+            Player player1 = new Player();
+            player1.playerHand[0] = deck.deckArray[0];
+            player1.playerHand[1] = deck.deckArray[1];
+            lblId1.Text = player1.playerHand[0].ToString();
+            lblId2.Text = player1.playerHand[1].ToString();
 
-            score = playerCard1.getVal() + playerCard2.getVal();            /** PlayerScore **/
-
-            lblValue1.Text = playerCard1.getVal().ToString();               /** GUI outputs **/
-            lblFace1.Text = playerCard1.getFace();
-            lblSuit1.Text = playerCard1.getSuit();
-
-            lblValue2.Text = playerCard2.getVal().ToString();              
-            lblFace2.Text = playerCard2.getFace();
-            lblSuit2.Text = playerCard2.getSuit();
 
             lblPlayerScore.Text = score.ToString();
 
