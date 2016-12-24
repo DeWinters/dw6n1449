@@ -8,24 +8,14 @@ using MySql.Data.MySqlClient;
 namespace dw6n1449
 {
     class Player
-    {
-        static String connectionString = "Server=localhost;Port=3306;database=blackjack;Uid=root;password=secret";
-        MySqlConnection conn = new MySqlConnection(connectionString);
-        // MySqlDataAdapter adptr = new MySqlDataAdapter();
-        
+    {      
         public int[] playerHand = new int[5];
         public int totCards = 0;
 
-        public int hit()
+        public void hit(int cardId)
         {
-            int nextCard = 1;
-
-                return nextCard;
+            playerHand[totCards] = cardId;
+            totCards++;
         }
-
-
-
-
-
     }
 }

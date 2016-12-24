@@ -47,8 +47,5 @@ namespace dw6n1449
             nextCard++;
             return dealt;
         }
-
-
-
     }
 }
