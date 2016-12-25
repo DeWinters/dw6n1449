@@ -16,8 +16,8 @@ namespace dw6n1449
         Random rand = new Random();
 
         public int[] deckArray = new int[52];
-        int position;
-        int nextCard = 0;       
+        private int position;
+        private int nextCard = 0;       
 
         public Deck()
         {

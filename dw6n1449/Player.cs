@@ -10,7 +10,13 @@ namespace dw6n1449
     class Player
     {      
         public int[] playerHand = new int[5];
-        public int totCards = 0;
+        private int totCards = 0;
+
+        public int getPlayerHand(int card) { return playerHand[card]; }
+        public void setPlayerHand(int[] playerHand) { this.playerHand = playerHand; }
+
+        public int getTotCards() { return totCards; }
+        public void setTotCards(int totCards) { this.totCards = totCards; }
 
         public void hit(int cardId)
         {

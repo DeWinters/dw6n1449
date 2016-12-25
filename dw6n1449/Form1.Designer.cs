@@ -44,7 +44,7 @@
             this.lblCondition = new System.Windows.Forms.Label();
             this.btnHit = new System.Windows.Forms.Button();
             this.btnStay = new System.Windows.Forms.Button();
-            this.junk = new System.Windows.Forms.Label();
+            this.lblDealerScore = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblId1 = new System.Windows.Forms.Label();
@@ -78,11 +78,61 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.pnlDealerCard5 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblDealerCard5value = new System.Windows.Forms.Label();
+            this.lblDealerCard5id = new System.Windows.Forms.Label();
+            this.lblDealerCard5suit = new System.Windows.Forms.Label();
+            this.lblDealerCard5face = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.pnlDealerCard4 = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lblDealerCard4value = new System.Windows.Forms.Label();
+            this.lblDealerCard4id = new System.Windows.Forms.Label();
+            this.lblDealerCard4suit = new System.Windows.Forms.Label();
+            this.lblDealerCard4face = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.pnlDealerCard3 = new System.Windows.Forms.Panel();
+            this.label37 = new System.Windows.Forms.Label();
+            this.lblDealerCard3value = new System.Windows.Forms.Label();
+            this.lblDealerCard3id = new System.Windows.Forms.Label();
+            this.lblDealerCard3suit = new System.Windows.Forms.Label();
+            this.lblDealerCard3face = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.pnlDealerCard2 = new System.Windows.Forms.Panel();
+            this.label45 = new System.Windows.Forms.Label();
+            this.lblDealerCard2value = new System.Windows.Forms.Label();
+            this.lblDealerCard2id = new System.Windows.Forms.Label();
+            this.lblDealerCard2suit = new System.Windows.Forms.Label();
+            this.lblDealerCard2face = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.pnlDealerCard1 = new System.Windows.Forms.Panel();
+            this.lblDealerCard1id = new System.Windows.Forms.Label();
+            this.lblDealerCard1value = new System.Windows.Forms.Label();
+            this.lblDealerCard1suit = new System.Windows.Forms.Label();
+            this.lblDealerCard1face = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlCard3.SuspendLayout();
             this.pnlCard4.SuspendLayout();
             this.pnlCard5.SuspendLayout();
+            this.pnlDealerCard5.SuspendLayout();
+            this.pnlDealerCard4.SuspendLayout();
+            this.pnlDealerCard3.SuspendLayout();
+            this.pnlDealerCard2.SuspendLayout();
+            this.pnlDealerCard1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblValue1
@@ -229,16 +279,16 @@
             this.btnStay.TabIndex = 15;
             this.btnStay.Text = "Stay";
             this.btnStay.UseVisualStyleBackColor = true;
+            this.btnStay.Click += new System.EventHandler(this.btnStay_Click);
             // 
-            // junk
+            // lblDealerScore
             // 
-            this.junk.AutoSize = true;
-            this.junk.Location = new System.Drawing.Point(30, 161);
-            this.junk.Name = "junk";
-            this.junk.Size = new System.Drawing.Size(35, 13);
-            this.junk.TabIndex = 16;
-            this.junk.Text = "label7";
-            this.junk.Click += new System.EventHandler(this.junk_Click);
+            this.lblDealerScore.AutoSize = true;
+            this.lblDealerScore.Location = new System.Drawing.Point(60, 142);
+            this.lblDealerScore.Name = "lblDealerScore";
+            this.lblDealerScore.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerScore.TabIndex = 16;
+            this.lblDealerScore.Text = "label7";
             // 
             // label7
             // 
@@ -572,24 +622,468 @@
             this.label32.TabIndex = 11;
             this.label32.Text = "Suit:";
             // 
+            // pnlDealerCard5
+            // 
+            this.pnlDealerCard5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlDealerCard5.Controls.Add(this.label10);
+            this.pnlDealerCard5.Controls.Add(this.lblDealerCard5value);
+            this.pnlDealerCard5.Controls.Add(this.lblDealerCard5id);
+            this.pnlDealerCard5.Controls.Add(this.lblDealerCard5suit);
+            this.pnlDealerCard5.Controls.Add(this.lblDealerCard5face);
+            this.pnlDealerCard5.Controls.Add(this.label19);
+            this.pnlDealerCard5.Controls.Add(this.label20);
+            this.pnlDealerCard5.Controls.Add(this.label21);
+            this.pnlDealerCard5.Location = new System.Drawing.Point(368, 12);
+            this.pnlDealerCard5.Name = "pnlDealerCard5";
+            this.pnlDealerCard5.Size = new System.Drawing.Size(83, 108);
+            this.pnlDealerCard5.TabIndex = 26;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(19, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(21, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "ID:";
+            // 
+            // lblDealerCard5value
+            // 
+            this.lblDealerCard5value.AutoSize = true;
+            this.lblDealerCard5value.Location = new System.Drawing.Point(44, 34);
+            this.lblDealerCard5value.Name = "lblDealerCard5value";
+            this.lblDealerCard5value.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard5value.TabIndex = 6;
+            this.lblDealerCard5value.Text = "label1";
+            // 
+            // lblDealerCard5id
+            // 
+            this.lblDealerCard5id.AutoSize = true;
+            this.lblDealerCard5id.Location = new System.Drawing.Point(44, 12);
+            this.lblDealerCard5id.Name = "lblDealerCard5id";
+            this.lblDealerCard5id.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard5id.TabIndex = 20;
+            this.lblDealerCard5id.Text = "label1";
+            // 
+            // lblDealerCard5suit
+            // 
+            this.lblDealerCard5suit.AutoSize = true;
+            this.lblDealerCard5suit.Location = new System.Drawing.Point(44, 83);
+            this.lblDealerCard5suit.Name = "lblDealerCard5suit";
+            this.lblDealerCard5suit.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard5suit.TabIndex = 7;
+            this.lblDealerCard5suit.Text = "label3";
+            // 
+            // lblDealerCard5face
+            // 
+            this.lblDealerCard5face.AutoSize = true;
+            this.lblDealerCard5face.Location = new System.Drawing.Point(44, 59);
+            this.lblDealerCard5face.Name = "lblDealerCard5face";
+            this.lblDealerCard5face.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard5face.TabIndex = 8;
+            this.lblDealerCard5face.Text = "label2";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(3, 34);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(37, 13);
+            this.label19.TabIndex = 9;
+            this.label19.Text = "Value:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(5, 58);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(34, 13);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "Face:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(11, 83);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(28, 13);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Suit:";
+            // 
+            // pnlDealerCard4
+            // 
+            this.pnlDealerCard4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlDealerCard4.Controls.Add(this.label26);
+            this.pnlDealerCard4.Controls.Add(this.lblDealerCard4value);
+            this.pnlDealerCard4.Controls.Add(this.lblDealerCard4id);
+            this.pnlDealerCard4.Controls.Add(this.lblDealerCard4suit);
+            this.pnlDealerCard4.Controls.Add(this.lblDealerCard4face);
+            this.pnlDealerCard4.Controls.Add(this.label34);
+            this.pnlDealerCard4.Controls.Add(this.label35);
+            this.pnlDealerCard4.Controls.Add(this.label36);
+            this.pnlDealerCard4.Location = new System.Drawing.Point(279, 12);
+            this.pnlDealerCard4.Name = "pnlDealerCard4";
+            this.pnlDealerCard4.Size = new System.Drawing.Size(83, 108);
+            this.pnlDealerCard4.TabIndex = 27;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(19, 12);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(21, 13);
+            this.label26.TabIndex = 18;
+            this.label26.Text = "ID:";
+            // 
+            // lblDealerCard4value
+            // 
+            this.lblDealerCard4value.AutoSize = true;
+            this.lblDealerCard4value.Location = new System.Drawing.Point(44, 34);
+            this.lblDealerCard4value.Name = "lblDealerCard4value";
+            this.lblDealerCard4value.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard4value.TabIndex = 6;
+            this.lblDealerCard4value.Text = "label1";
+            // 
+            // lblDealerCard4id
+            // 
+            this.lblDealerCard4id.AutoSize = true;
+            this.lblDealerCard4id.Location = new System.Drawing.Point(44, 12);
+            this.lblDealerCard4id.Name = "lblDealerCard4id";
+            this.lblDealerCard4id.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard4id.TabIndex = 20;
+            this.lblDealerCard4id.Text = "label1";
+            // 
+            // lblDealerCard4suit
+            // 
+            this.lblDealerCard4suit.AutoSize = true;
+            this.lblDealerCard4suit.Location = new System.Drawing.Point(44, 83);
+            this.lblDealerCard4suit.Name = "lblDealerCard4suit";
+            this.lblDealerCard4suit.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard4suit.TabIndex = 7;
+            this.lblDealerCard4suit.Text = "label3";
+            // 
+            // lblDealerCard4face
+            // 
+            this.lblDealerCard4face.AutoSize = true;
+            this.lblDealerCard4face.Location = new System.Drawing.Point(44, 59);
+            this.lblDealerCard4face.Name = "lblDealerCard4face";
+            this.lblDealerCard4face.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard4face.TabIndex = 8;
+            this.lblDealerCard4face.Text = "label2";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(3, 34);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(37, 13);
+            this.label34.TabIndex = 9;
+            this.label34.Text = "Value:";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(5, 58);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(34, 13);
+            this.label35.TabIndex = 10;
+            this.label35.Text = "Face:";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(11, 83);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(28, 13);
+            this.label36.TabIndex = 11;
+            this.label36.Text = "Suit:";
+            // 
+            // pnlDealerCard3
+            // 
+            this.pnlDealerCard3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlDealerCard3.Controls.Add(this.label37);
+            this.pnlDealerCard3.Controls.Add(this.lblDealerCard3value);
+            this.pnlDealerCard3.Controls.Add(this.lblDealerCard3id);
+            this.pnlDealerCard3.Controls.Add(this.lblDealerCard3suit);
+            this.pnlDealerCard3.Controls.Add(this.lblDealerCard3face);
+            this.pnlDealerCard3.Controls.Add(this.label42);
+            this.pnlDealerCard3.Controls.Add(this.label43);
+            this.pnlDealerCard3.Controls.Add(this.label44);
+            this.pnlDealerCard3.Location = new System.Drawing.Point(190, 12);
+            this.pnlDealerCard3.Name = "pnlDealerCard3";
+            this.pnlDealerCard3.Size = new System.Drawing.Size(83, 108);
+            this.pnlDealerCard3.TabIndex = 28;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(19, 12);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(21, 13);
+            this.label37.TabIndex = 18;
+            this.label37.Text = "ID:";
+            // 
+            // lblDealerCard3value
+            // 
+            this.lblDealerCard3value.AutoSize = true;
+            this.lblDealerCard3value.Location = new System.Drawing.Point(44, 34);
+            this.lblDealerCard3value.Name = "lblDealerCard3value";
+            this.lblDealerCard3value.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard3value.TabIndex = 6;
+            this.lblDealerCard3value.Text = "label1";
+            // 
+            // lblDealerCard3id
+            // 
+            this.lblDealerCard3id.AutoSize = true;
+            this.lblDealerCard3id.Location = new System.Drawing.Point(44, 12);
+            this.lblDealerCard3id.Name = "lblDealerCard3id";
+            this.lblDealerCard3id.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard3id.TabIndex = 20;
+            this.lblDealerCard3id.Text = "label1";
+            // 
+            // lblDealerCard3suit
+            // 
+            this.lblDealerCard3suit.AutoSize = true;
+            this.lblDealerCard3suit.Location = new System.Drawing.Point(44, 83);
+            this.lblDealerCard3suit.Name = "lblDealerCard3suit";
+            this.lblDealerCard3suit.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard3suit.TabIndex = 7;
+            this.lblDealerCard3suit.Text = "label3";
+            // 
+            // lblDealerCard3face
+            // 
+            this.lblDealerCard3face.AutoSize = true;
+            this.lblDealerCard3face.Location = new System.Drawing.Point(44, 59);
+            this.lblDealerCard3face.Name = "lblDealerCard3face";
+            this.lblDealerCard3face.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard3face.TabIndex = 8;
+            this.lblDealerCard3face.Text = "label2";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(3, 34);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(37, 13);
+            this.label42.TabIndex = 9;
+            this.label42.Text = "Value:";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(5, 58);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(34, 13);
+            this.label43.TabIndex = 10;
+            this.label43.Text = "Face:";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(11, 83);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(28, 13);
+            this.label44.TabIndex = 11;
+            this.label44.Text = "Suit:";
+            // 
+            // pnlDealerCard2
+            // 
+            this.pnlDealerCard2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlDealerCard2.Controls.Add(this.label45);
+            this.pnlDealerCard2.Controls.Add(this.lblDealerCard2value);
+            this.pnlDealerCard2.Controls.Add(this.lblDealerCard2id);
+            this.pnlDealerCard2.Controls.Add(this.lblDealerCard2suit);
+            this.pnlDealerCard2.Controls.Add(this.lblDealerCard2face);
+            this.pnlDealerCard2.Controls.Add(this.label50);
+            this.pnlDealerCard2.Controls.Add(this.label51);
+            this.pnlDealerCard2.Controls.Add(this.label52);
+            this.pnlDealerCard2.Location = new System.Drawing.Point(101, 12);
+            this.pnlDealerCard2.Name = "pnlDealerCard2";
+            this.pnlDealerCard2.Size = new System.Drawing.Size(83, 108);
+            this.pnlDealerCard2.TabIndex = 25;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(19, 12);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(21, 13);
+            this.label45.TabIndex = 18;
+            this.label45.Text = "ID:";
+            // 
+            // lblDealerCard2value
+            // 
+            this.lblDealerCard2value.AutoSize = true;
+            this.lblDealerCard2value.Location = new System.Drawing.Point(44, 34);
+            this.lblDealerCard2value.Name = "lblDealerCard2value";
+            this.lblDealerCard2value.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard2value.TabIndex = 6;
+            this.lblDealerCard2value.Text = "label1";
+            // 
+            // lblDealerCard2id
+            // 
+            this.lblDealerCard2id.AutoSize = true;
+            this.lblDealerCard2id.Location = new System.Drawing.Point(44, 12);
+            this.lblDealerCard2id.Name = "lblDealerCard2id";
+            this.lblDealerCard2id.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard2id.TabIndex = 20;
+            this.lblDealerCard2id.Text = "label1";
+            // 
+            // lblDealerCard2suit
+            // 
+            this.lblDealerCard2suit.AutoSize = true;
+            this.lblDealerCard2suit.Location = new System.Drawing.Point(44, 83);
+            this.lblDealerCard2suit.Name = "lblDealerCard2suit";
+            this.lblDealerCard2suit.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard2suit.TabIndex = 7;
+            this.lblDealerCard2suit.Text = "label3";
+            // 
+            // lblDealerCard2face
+            // 
+            this.lblDealerCard2face.AutoSize = true;
+            this.lblDealerCard2face.Location = new System.Drawing.Point(44, 59);
+            this.lblDealerCard2face.Name = "lblDealerCard2face";
+            this.lblDealerCard2face.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard2face.TabIndex = 8;
+            this.lblDealerCard2face.Text = "label2";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(3, 34);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(37, 13);
+            this.label50.TabIndex = 9;
+            this.label50.Text = "Value:";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(5, 58);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(34, 13);
+            this.label51.TabIndex = 10;
+            this.label51.Text = "Face:";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(11, 83);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(28, 13);
+            this.label52.TabIndex = 11;
+            this.label52.Text = "Suit:";
+            // 
+            // pnlDealerCard1
+            // 
+            this.pnlDealerCard1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlDealerCard1.Controls.Add(this.lblDealerCard1id);
+            this.pnlDealerCard1.Controls.Add(this.lblDealerCard1value);
+            this.pnlDealerCard1.Controls.Add(this.lblDealerCard1suit);
+            this.pnlDealerCard1.Controls.Add(this.lblDealerCard1face);
+            this.pnlDealerCard1.Controls.Add(this.label57);
+            this.pnlDealerCard1.Controls.Add(this.label58);
+            this.pnlDealerCard1.Controls.Add(this.label59);
+            this.pnlDealerCard1.Controls.Add(this.label60);
+            this.pnlDealerCard1.Location = new System.Drawing.Point(12, 12);
+            this.pnlDealerCard1.Name = "pnlDealerCard1";
+            this.pnlDealerCard1.Size = new System.Drawing.Size(83, 108);
+            this.pnlDealerCard1.TabIndex = 24;
+            // 
+            // lblDealerCard1id
+            // 
+            this.lblDealerCard1id.AutoSize = true;
+            this.lblDealerCard1id.Location = new System.Drawing.Point(45, 11);
+            this.lblDealerCard1id.Name = "lblDealerCard1id";
+            this.lblDealerCard1id.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard1id.TabIndex = 19;
+            this.lblDealerCard1id.Text = "label1";
+            // 
+            // lblDealerCard1value
+            // 
+            this.lblDealerCard1value.AutoSize = true;
+            this.lblDealerCard1value.Location = new System.Drawing.Point(45, 33);
+            this.lblDealerCard1value.Name = "lblDealerCard1value";
+            this.lblDealerCard1value.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard1value.TabIndex = 0;
+            this.lblDealerCard1value.Text = "label1";
+            // 
+            // lblDealerCard1suit
+            // 
+            this.lblDealerCard1suit.AutoSize = true;
+            this.lblDealerCard1suit.Location = new System.Drawing.Point(45, 82);
+            this.lblDealerCard1suit.Name = "lblDealerCard1suit";
+            this.lblDealerCard1suit.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard1suit.TabIndex = 1;
+            this.lblDealerCard1suit.Text = "label3";
+            // 
+            // lblDealerCard1face
+            // 
+            this.lblDealerCard1face.AutoSize = true;
+            this.lblDealerCard1face.Location = new System.Drawing.Point(45, 58);
+            this.lblDealerCard1face.Name = "lblDealerCard1face";
+            this.lblDealerCard1face.Size = new System.Drawing.Size(35, 13);
+            this.lblDealerCard1face.TabIndex = 2;
+            this.lblDealerCard1face.Text = "label2";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(4, 33);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(37, 13);
+            this.label57.TabIndex = 3;
+            this.label57.Text = "Value:";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(18, 11);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(21, 13);
+            this.label58.TabIndex = 17;
+            this.label58.Text = "ID:";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(6, 57);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(34, 13);
+            this.label59.TabIndex = 4;
+            this.label59.Text = "Face:";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(12, 82);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(28, 13);
+            this.label60.TabIndex = 5;
+            this.label60.Text = "Suit:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 461);
+            this.Controls.Add(this.pnlDealerCard5);
             this.Controls.Add(this.pnlCard5);
+            this.Controls.Add(this.pnlDealerCard4);
             this.Controls.Add(this.pnlCard4);
+            this.Controls.Add(this.pnlDealerCard3);
             this.Controls.Add(this.pnlCard3);
+            this.Controls.Add(this.pnlDealerCard2);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlDealerCard1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.junk);
+            this.Controls.Add(this.lblDealerScore);
             this.Controls.Add(this.btnStay);
             this.Controls.Add(this.btnHit);
             this.Controls.Add(this.lblCondition);
             this.Controls.Add(this.lblPlayerScore);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -600,6 +1094,16 @@
             this.pnlCard4.PerformLayout();
             this.pnlCard5.ResumeLayout(false);
             this.pnlCard5.PerformLayout();
+            this.pnlDealerCard5.ResumeLayout(false);
+            this.pnlDealerCard5.PerformLayout();
+            this.pnlDealerCard4.ResumeLayout(false);
+            this.pnlDealerCard4.PerformLayout();
+            this.pnlDealerCard3.ResumeLayout(false);
+            this.pnlDealerCard3.PerformLayout();
+            this.pnlDealerCard2.ResumeLayout(false);
+            this.pnlDealerCard2.PerformLayout();
+            this.pnlDealerCard1.ResumeLayout(false);
+            this.pnlDealerCard1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -623,7 +1127,7 @@
         private System.Windows.Forms.Label lblCondition;
         private System.Windows.Forms.Button btnHit;
         private System.Windows.Forms.Button btnStay;
-        private System.Windows.Forms.Label junk;
+        private System.Windows.Forms.Label lblDealerScore;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblId1;
@@ -657,6 +1161,51 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Panel pnlDealerCard5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblDealerCard5value;
+        private System.Windows.Forms.Label lblDealerCard5id;
+        private System.Windows.Forms.Label lblDealerCard5suit;
+        private System.Windows.Forms.Label lblDealerCard5face;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel pnlDealerCard4;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblDealerCard4value;
+        private System.Windows.Forms.Label lblDealerCard4id;
+        private System.Windows.Forms.Label lblDealerCard4suit;
+        private System.Windows.Forms.Label lblDealerCard4face;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Panel pnlDealerCard3;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label lblDealerCard3value;
+        private System.Windows.Forms.Label lblDealerCard3id;
+        private System.Windows.Forms.Label lblDealerCard3suit;
+        private System.Windows.Forms.Label lblDealerCard3face;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Panel pnlDealerCard2;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label lblDealerCard2value;
+        private System.Windows.Forms.Label lblDealerCard2id;
+        private System.Windows.Forms.Label lblDealerCard2suit;
+        private System.Windows.Forms.Label lblDealerCard2face;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Panel pnlDealerCard1;
+        private System.Windows.Forms.Label lblDealerCard1id;
+        private System.Windows.Forms.Label lblDealerCard1value;
+        private System.Windows.Forms.Label lblDealerCard1suit;
+        private System.Windows.Forms.Label lblDealerCard1face;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label60;
     }
 }
 
