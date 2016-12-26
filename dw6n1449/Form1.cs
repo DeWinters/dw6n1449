@@ -35,20 +35,14 @@ namespace dw6n1449
         Card dealerCard5 = new Card();
         int dealerScore;
 
+        int helpPage = 0;
+
 
         public Form1()
         {
             InitializeComponent();
-
-            //Image ac = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\AC.jpeg");
-
-            // pnlCard3.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\AC.jpeg", false);
-
-            string astring = "A";
-            string cstring = "C";
-
-           // pnlPlayerCard1.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\" + astring + cstring + ".jpg");
-
+         
+            pnlHelp.Visible = false;
             pnlPlayerCard3.Visible = false;
             pnlPlayerCard4.Visible = false;
             pnlPlayerCard5.Visible = false;
@@ -57,6 +51,7 @@ namespace dw6n1449
             pnlDealerCard3.Visible = false;
             pnlDealerCard4.Visible = false;
             pnlDealerCard5.Visible = false;
+            lblDealerScore.Visible = false;
 
             btnStay.Visible = false;
             btnHit.Visible = false;
@@ -291,9 +286,39 @@ namespace dw6n1449
 
             dealerScore = dealerCard1.getVal() + dealerCard2.getVal() + dealerCard3.getVal() +
                           dealerCard4.getVal() + dealerCard5.getVal();
-
+           
             lblDealerScore.Text = dealerScore.ToString();
+            if (dealerScore > 0) { lblDealerScore.Visible = true;
+            } else { lblDealerScore.Visible = false; }
 
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            pnlHelp.Visible = true;
+            pnlGame.Visible = false;
+            helpPage = 0;
+            pnlHelp.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\help" + helpPage + ".jpg");
+        }
+
+        private void btnHelpEnd_Click(object sender, EventArgs e)
+        {
+            pnlHelp.Visible = false;
+            helpPage = 0;
+            pnlGame.Visible = true;
+            btnHelpNext.Visible = true;
+        }
+
+        private void btnHelpNext_Click(object sender, EventArgs e)
+        {           
+            helpPage++; // make some test for remaining help pages
+            if (helpPage < 4)
+            {
+                pnlHelp.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\help" + helpPage + ".jpg");
+            }else
+            {
+                btnHelpNext.Visible = false;
+            }
         }
     }//form
 }
