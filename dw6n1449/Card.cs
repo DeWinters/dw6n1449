@@ -29,5 +29,7 @@ namespace dw6n1449
         
         public int getPlace() { return place; }
         public void setPlace(int place) { this.place = place; }   // needs random number
+
+
     }
 }

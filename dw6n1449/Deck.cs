@@ -12,9 +12,8 @@ namespace dw6n1449
 
         static String connectionString = "Server=localhost;Port=3306;database=blackjack;Uid=root;password=secret";
         MySqlConnection conn = new MySqlConnection(connectionString);
-        // MySqlDataAdapter adptr = new MySqlDataAdapter();
-        Random rand = new Random();
 
+        Random rand = new Random();
         public int[] deckArray = new int[52];
         private int position;
         private int nextCard = 0;       
@@ -43,8 +42,12 @@ namespace dw6n1449
 
         public int dealCard()
         {
-            int dealt = deckArray[nextCard];
-            nextCard++;
+            int dealt = 0;
+            if (nextCard < 52)
+            {
+                dealt = deckArray[nextCard];
+                nextCard++;
+            }
             return dealt;
         }
     }
