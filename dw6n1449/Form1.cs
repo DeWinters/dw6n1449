@@ -13,35 +13,38 @@ namespace dw6n1449
 {
     public partial class Form1 : Form
     {
+        Game game = new Game();        
+
+        static string imgResPrefix = "C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\";
+        static string helpResPrefix = "C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\help";
+
         static String connectionString = "Server=localhost;Port=3306;database=blackjack;Uid=root;password=secret";
         MySqlConnection conn = new MySqlConnection(connectionString);
-        // MySqlDataAdapter adptr = new MySqlDataAdapter
 
         Deck deck = new Deck();
 
         Player player1 = new Player();
-        Card playerCard1 = new Card();
-        Card playerCard2 = new Card();
-        Card playerCard3 = new Card();
-        Card playerCard4 = new Card();
-        Card playerCard5 = new Card();       
-        int playerScore;
 
         Player dealer = new Player();
-        Card dealerCard1 = new Card();
-        Card dealerCard2 = new Card();
-        Card dealerCard3 = new Card();
-        Card dealerCard4 = new Card();
-        Card dealerCard5 = new Card();
-        int dealerScore;
-
+        
         int helpPage = 0;
-
 
         public Form1()
         {
+            //game.callLoginPage();
             InitializeComponent();
-         
+
+            //this.WindowState = FormWindowState.Minimized;
+            //this.ShowInTaskbar = false;
+            //callLogin();
+            /**
+            this.WindowState = FormWindowState.Normal;
+            this.ShowInTaskbar = true;
+            this.Visible = true;
+            this.Show();
+            this.BringToFront();
+            **/
+
             pnlHelp.Visible = false;
             pnlPlayerCard3.Visible = false;
             pnlPlayerCard4.Visible = false;
@@ -85,8 +88,6 @@ namespace dw6n1449
             return card;
         }
 
-    
-
         private void btnHit_Click(object sender, EventArgs e)
         {
             player1.hit(deck.dealCard());
@@ -96,13 +97,13 @@ namespace dw6n1449
 
         private void playerActions()
         {
-            if (playerScore > 21)                                                  /** hand status **/
+            if (player1.getHandScore() > 21)                                                  /** hand status **/
             {                                                               // bust actions
                 lblCondition.Text = "BUST! (you have gone over 21)";
                 btnHit.Visible = false;
                 btnStay.Visible = false;
             }
-            else if (playerScore == 21)
+            else if (player1.getHandScore() == 21)
             {                                                               // win actions
                 lblCondition.Text = "BLACKJACK! Congratulations!";
                 btnHit.Visible = false;
@@ -122,15 +123,15 @@ namespace dw6n1449
             
             populateTable();
 
-            if (dealerScore == 21)
+            if (dealer.getHandScore() == 21)
             {
                 lblCondition.Text = "Hard luck, Dealer has BlackJack";
                 populateTable();
-            } else if (dealerScore > 21)
+            } else if (dealer.getHandScore() > 21)
             {
                 lblCondition.Text = "Dealer Busts! You Win!";
 
-            } else if ( dealerScore < 17)
+            } else if ( dealer.getHandScore() < 17)
             { 
                 dealer.hit(deck.dealCard());
                 dealerActions();
@@ -155,17 +156,17 @@ namespace dw6n1449
 
         private void compareScores()
         {
-            if (dealerScore == 21)
+            if (dealer.getHandScore() == 21)
             {
                 lblCondition.Text = "Dealer has Blackjack";
             }
-            if (playerScore > dealerScore)
+            if (player1.getHandScore() > dealer.getHandScore())
             {
                 lblCondition.Text = "You Win!";
-            }else if (dealerScore > playerScore)
+            }else if (dealer.getHandScore() > player1.getHandScore())
             {
                 lblCondition.Text = "Sorry, You Lose.";
-            }else if (dealerScore == playerScore)
+            }else if (dealer.getHandScore() == player1.getHandScore())
             {
                 lblCondition.Text = "DRAW";
             }
@@ -174,122 +175,127 @@ namespace dw6n1449
 
         private void populateTable()
         {
+            player1.setCard1(populateCard(player1.getPlayerHand(0)));
+            lblId1.Text = player1.getPlayerHand(0).ToString();
+            lblFace1.Text = player1.getCard1().getFace();
+            lblSuit1.Text = player1.getCard1().getSuit();
+            lblValue1.Text = player1.getCard1().getVal().ToString();
+            pnlPlayerCard1.BackgroundImage = Image.FromFile(imgResPrefix + player1.getCard1().getFace() + 
+                                                                    player1.getCard1().getSuit() + ".jpg");
 
-            playerCard1 = populateCard(player1.getPlayerHand(0));
-            lblId1.Text = player1.playerHand[0].ToString();
-            lblFace1.Text = playerCard1.getFace();
-            lblSuit1.Text = playerCard1.getSuit();
-            lblValue1.Text = playerCard1.getVal().ToString();
-            pnlPlayerCard1.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\" + playerCard1.getFace() + playerCard1.getSuit() + ".jpg");
+            player1.setCard2(populateCard(player1.getPlayerHand(1)));
+            lblId2.Text = player1.getPlayerHand(1).ToString();
+            lblFace2.Text = player1.getCard2().getFace();
+            lblSuit2.Text = player1.getCard2().getSuit();
+            lblValue2.Text = player1.getCard2().getVal().ToString();
+            pnlPlayerCard2.BackgroundImage = Image.FromFile(imgResPrefix + player1.getCard2().getFace() + 
+                                                                    player1.getCard2().getSuit() + ".jpg");
 
-            playerCard2 = populateCard(player1.getPlayerHand(1));
-            lblId2.Text = player1.playerHand[1].ToString();
-            lblFace2.Text = playerCard2.getFace();
-            lblSuit2.Text = playerCard2.getSuit();
-            lblValue2.Text = playerCard2.getVal().ToString();
-            pnlPlayerCard2.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\" + playerCard2.getFace() + playerCard2.getSuit() + ".jpg");
-
-            playerCard3 = populateCard(player1.getPlayerHand(2));
-            lblId3.Text = player1.playerHand[2].ToString();
-            lblFace3.Text = playerCard3.getFace();
-            lblSuit3.Text = playerCard3.getSuit();
-            lblValue3.Text = playerCard3.getVal().ToString();          
-            if (playerCard3.getVal() != 0)
+            player1.setCard3(populateCard(player1.getPlayerHand(2)));
+            lblId3.Text = player1.getPlayerHand(2).ToString();
+            lblFace3.Text = player1.getCard3().getFace();
+            lblSuit3.Text = player1.getCard3().getSuit();
+            lblValue3.Text = player1.getCard3().getVal().ToString();          
+            if (player1.getCard3().getVal() != 0)
             {
-                pnlPlayerCard3.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\" + playerCard3.getFace() + playerCard3.getSuit() + ".jpg");
+                pnlPlayerCard3.BackgroundImage = Image.FromFile(imgResPrefix + player1.getCard3().getFace() + 
+                                                                    player1.getCard3().getSuit() + ".jpg");
                 pnlPlayerCard3.Visible = true;
             }
 
-            playerCard4 = populateCard(player1.getPlayerHand(3));
-            lblId4.Text = player1.playerHand[3].ToString();
-            lblFace4.Text = playerCard4.getFace();
-            lblSuit4.Text = playerCard4.getSuit();
-            lblValue4.Text = playerCard4.getVal().ToString();
-            if (playerCard4.getVal() != 0)
+            player1.setCard4(populateCard(player1.getPlayerHand(3)));
+            lblId4.Text = player1.getPlayerHand(3).ToString();
+            lblFace4.Text = player1.getCard4().getFace();
+            lblSuit4.Text = player1.getCard4().getSuit();
+            lblValue4.Text = player1.getCard4().getVal().ToString();
+            if (player1.getCard4().getVal() != 0)
             {
-                pnlPlayerCard4.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\" + playerCard4.getFace() + playerCard4.getSuit() + ".jpg");
+                pnlPlayerCard4.BackgroundImage = Image.FromFile(imgResPrefix + player1.getCard4().getFace() + 
+                                                                    player1.getCard4().getSuit() + ".jpg");
                 pnlPlayerCard4.Visible = true;
             }
 
-            playerCard5 = populateCard(player1.getPlayerHand(4));
-            lblId5.Text = player1.playerHand[4].ToString();
-            lblFace5.Text = playerCard5.getFace();
-            lblSuit5.Text = playerCard5.getSuit();
-            lblValue5.Text = playerCard5.getVal().ToString();
-            if (playerCard5.getVal() != 0)
+            player1.setCard5(populateCard(player1.getPlayerHand(4)));
+            lblId5.Text = player1.getPlayerHand(4).ToString();
+            lblFace5.Text = player1.getCard5().getFace();
+            lblSuit5.Text = player1.getCard5().getSuit();
+            lblValue5.Text = player1.getCard5().getVal().ToString();
+            if (player1.getCard5().getVal() != 0)
             {
-                pnlPlayerCard5.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\" + playerCard5.getFace() + playerCard5.getSuit() + ".jpg");
+                pnlPlayerCard5.BackgroundImage = Image.FromFile(imgResPrefix + player1.getCard5().getFace() + 
+                                                                    player1.getCard5().getSuit() + ".jpg");
                 pnlPlayerCard5.Visible = true;
             }
 
-            playerScore = playerCard1.getVal() + playerCard2.getVal() + playerCard3.getVal() +
-                          playerCard4.getVal() + playerCard5.getVal();
-
-            lblPlayerScore.Text = playerScore.ToString();
+            player1.setHandScore();
+            lblPlayerScore.Text = player1.getHandScore().ToString();
 
 
-            dealerCard1 = populateCard(dealer.getPlayerHand(0));
-            lblDealerCard1id.Text = dealer.playerHand[0].ToString();
-            lblDealerCard1face.Text = dealerCard1.getFace();
-            lblDealerCard1suit.Text = dealerCard1.getSuit();
-            lblDealerCard1value.Text = dealerCard1.getVal().ToString();
+            dealer.setCard1(populateCard(dealer.getPlayerHand(0)));
+            lblDealerCard1id.Text = dealer.getPlayerHand(0).ToString();
+            lblDealerCard1face.Text = dealer.getCard1().getFace();
+            lblDealerCard1suit.Text = dealer.getCard1().getSuit();
+            lblDealerCard1value.Text = dealer.getCard1().getVal().ToString();
            
-            if (dealerCard1.getVal() != 0)
+            if (dealer.getCard1().getVal() != 0)
             {
-                pnlDealerCard1.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\" + dealerCard1.getFace() + dealerCard1.getSuit() + ".jpg");
+                pnlDealerCard1.BackgroundImage = Image.FromFile(imgResPrefix + dealer.getCard1().getFace() + dealer.getCard1().getSuit() + ".jpg");
                 pnlDealerCard1.Visible = true;
             }
 
-            dealerCard2 = populateCard(dealer.getPlayerHand(1));
-            lblDealerCard2id.Text = dealer.playerHand[1].ToString();
-            lblDealerCard2face.Text = dealerCard2.getFace();
-            lblDealerCard2suit.Text = dealerCard2.getSuit();
-            lblDealerCard2value.Text = dealerCard2.getVal().ToString();          
-            if (dealerCard2.getVal() != 0)
+            dealer.setCard2(populateCard(dealer.getPlayerHand(1)));
+            lblDealerCard2id.Text = dealer.getPlayerHand(1).ToString();
+            lblDealerCard2face.Text = dealer.getCard2().getFace();
+            lblDealerCard2suit.Text = dealer.getCard2().getSuit();
+            lblDealerCard2value.Text = dealer.getCard2().getVal().ToString();          
+            if (dealer.getCard2().getVal() != 0)
             {
-                pnlDealerCard2.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\" + dealerCard2.getFace() + dealerCard2.getSuit() + ".jpg");
+                pnlDealerCard2.BackgroundImage = Image.FromFile(imgResPrefix + dealer.getCard2().getFace() + dealer.getCard2().getSuit() + ".jpg");
                 pnlDealerCard2.Visible = true;
             }
 
-            dealerCard3 = populateCard(dealer.getPlayerHand(2));
-            lblDealerCard3id.Text = dealer.playerHand[2].ToString();
-            lblDealerCard3face.Text = dealerCard3.getFace();
-            lblDealerCard3suit.Text = dealerCard3.getSuit();
-            lblDealerCard3value.Text = dealerCard3.getVal().ToString();           
-            if (dealerCard3.getVal() != 0)
+            dealer.setCard3(populateCard(dealer.getPlayerHand(2)));
+            lblDealerCard3id.Text = dealer.getPlayerHand(2).ToString();
+            lblDealerCard3face.Text = dealer.getCard3().getFace();
+            lblDealerCard3suit.Text = dealer.getCard3().getSuit();
+            lblDealerCard3value.Text = dealer.getCard3().getVal().ToString();           
+            if (dealer.getCard3().getVal() != 0)
             {
-                pnlDealerCard3.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\" + dealerCard3.getFace() + dealerCard3.getSuit() + ".jpg");
+                pnlDealerCard3.BackgroundImage = Image.FromFile(imgResPrefix + dealer.getCard3().getFace() + dealer.getCard3().getSuit() + ".jpg");
                 pnlDealerCard3.Visible = true;
             }
 
-            dealerCard4 = populateCard(dealer.getPlayerHand(3));
-            lblDealerCard4id.Text = dealer.playerHand[3].ToString();
-            lblDealerCard4face.Text = dealerCard4.getFace();
-            lblDealerCard4suit.Text = dealerCard4.getSuit();
-            lblDealerCard4value.Text = dealerCard4.getVal().ToString();          
-            if (dealerCard4.getVal() != 0)
+            dealer.setCard4(populateCard(dealer.getPlayerHand(3)));
+            lblDealerCard4id.Text = dealer.getPlayerHand(3).ToString();
+            lblDealerCard4face.Text = dealer.getCard4().getFace();
+            lblDealerCard4suit.Text = dealer.getCard4().getSuit();
+            lblDealerCard4value.Text = dealer.getCard4().getVal().ToString();          
+            if (dealer.getCard4().getVal() != 0)
             {
-                pnlDealerCard4.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\" + dealerCard4.getFace() + dealerCard4.getSuit() + ".jpg");
+                pnlDealerCard4.BackgroundImage = Image.FromFile(imgResPrefix + dealer.getCard4().getFace() + dealer.getCard4().getSuit() + ".jpg");
                 pnlDealerCard4.Visible = true;
             }
 
-            dealerCard5 = populateCard(dealer.getPlayerHand(4));
-            lblDealerCard5id.Text = dealer.playerHand[4].ToString();
-            lblDealerCard5face.Text = dealerCard5.getFace();
-            lblDealerCard5suit.Text = dealerCard5.getSuit();
-            lblDealerCard5value.Text = dealerCard5.getVal().ToString();           
-            if (dealerCard5.getVal() != 0)
+            dealer.setCard5(populateCard(dealer.getPlayerHand(4)));
+            lblDealerCard5id.Text = dealer.getPlayerHand(4).ToString();
+            lblDealerCard5face.Text = dealer.getCard5().getFace();
+            lblDealerCard5suit.Text = dealer.getCard5().getSuit();
+            lblDealerCard5value.Text = dealer.getCard5().getVal().ToString();           
+            if (dealer.getCard5().getVal() != 0)
             {
-                pnlDealerCard5.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\" + dealerCard5.getFace() + dealerCard5.getSuit() + ".jpg");
+                pnlDealerCard5.BackgroundImage = Image.FromFile(imgResPrefix + dealer.getCard5().getFace() + dealer.getCard5().getSuit() + ".jpg");
                 pnlDealerCard5.Visible = true;
             }
 
-            dealerScore = dealerCard1.getVal() + dealerCard2.getVal() + dealerCard3.getVal() +
-                          dealerCard4.getVal() + dealerCard5.getVal();
-           
-            lblDealerScore.Text = dealerScore.ToString();
-            if (dealerScore > 0) { lblDealerScore.Visible = true;
-            } else { lblDealerScore.Visible = false; }
+            dealer.setHandScore();
+            lblDealerScore.Text = dealer.getHandScore().ToString();
+            if (dealer.getHandScore() > 0)
+            {
+                lblDealerScore.Visible = true;
+            } else
+            {
+                lblDealerScore.Visible = false;
+            }
 
         }
 
@@ -298,7 +304,7 @@ namespace dw6n1449
             pnlHelp.Visible = true;
             pnlGame.Visible = false;
             helpPage = 0;
-            pnlHelp.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\help" + helpPage + ".jpg");
+            pnlHelp.BackgroundImage = Image.FromFile(helpResPrefix + helpPage + ".jpg");
         }
 
         private void btnHelpEnd_Click(object sender, EventArgs e)
@@ -314,11 +320,21 @@ namespace dw6n1449
             helpPage++; // make some test for remaining help pages
             if (helpPage < 4)
             {
-                pnlHelp.BackgroundImage = Image.FromFile("C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\help" + helpPage + ".jpg");
+                pnlHelp.BackgroundImage = Image.FromFile(helpResPrefix + helpPage + ".jpg");
             }else
             {
                 btnHelpNext.Visible = false;
             }
+        }
+
+        private void callLogin()
+        {
+            this.Visible = false;
+            this.Hide();
+            this.SendToBack();
+            Form2 form2 = new Form2();
+            form2.Show();
+            form2.BringToFront();
         }
     }//form
 }
