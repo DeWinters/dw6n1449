@@ -134,9 +134,9 @@
             this.btnHelpNext = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.pnlIntro = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnIntro = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
+            this.lblIntroOutput = new System.Windows.Forms.Label();
             this.pnlPlayerCard2.SuspendLayout();
             this.pnlPlayerCard3.SuspendLayout();
             this.pnlPlayerCard4.SuspendLayout();
@@ -1210,31 +1210,23 @@
             // 
             this.pnlIntro.BackColor = System.Drawing.Color.Fuchsia;
             this.pnlIntro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlIntro.Controls.Add(this.button1);
-            this.pnlIntro.Controls.Add(this.button2);
+            this.pnlIntro.Controls.Add(this.lblIntroOutput);
+            this.pnlIntro.Controls.Add(this.btnIntro);
             this.pnlIntro.Controls.Add(this.label27);
-            this.pnlIntro.Location = new System.Drawing.Point(485, 3);
+            this.pnlIntro.Location = new System.Drawing.Point(2, 4);
             this.pnlIntro.Name = "pnlIntro";
             this.pnlIntro.Size = new System.Drawing.Size(467, 463);
             this.pnlIntro.TabIndex = 32;
             // 
-            // button1
+            // btnIntro
             // 
-            this.button1.Location = new System.Drawing.Point(346, 431);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Got It";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(346, 402);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "Next =>";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnIntro.Location = new System.Drawing.Point(182, 279);
+            this.btnIntro.Name = "btnIntro";
+            this.btnIntro.Size = new System.Drawing.Size(75, 23);
+            this.btnIntro.TabIndex = 33;
+            this.btnIntro.Text = "Place Bet";
+            this.btnIntro.UseVisualStyleBackColor = true;
+            this.btnIntro.Click += new System.EventHandler(this.btnIntro_Click);
             // 
             // label27
             // 
@@ -1243,7 +1235,16 @@
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(56, 13);
             this.label27.TabIndex = 31;
-            this.label27.Text = "help panel";
+            this.label27.Text = "intro panel";
+            // 
+            // lblIntroOutput
+            // 
+            this.lblIntroOutput.AutoSize = true;
+            this.lblIntroOutput.Location = new System.Drawing.Point(125, 245);
+            this.lblIntroOutput.Name = "lblIntroOutput";
+            this.lblIntroOutput.Size = new System.Drawing.Size(41, 13);
+            this.lblIntroOutput.TabIndex = 34;
+            this.lblIntroOutput.Text = "label28";
             // 
             // Form1
             // 
@@ -1394,9 +1395,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblPlayer1Name;
         private System.Windows.Forms.Panel pnlIntro;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnIntro;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label lblIntroOutput;
     }
 }
 

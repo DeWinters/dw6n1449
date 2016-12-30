@@ -26,18 +26,24 @@ namespace dw6n1449
 
             InitializeComponent();
 
-            callForm2();
+            
             this.SendToBack();
-           // this.WindowState = FormWindowState.Minimized;
+            // this.WindowState = FormWindowState.Minimized;
             /**this.WindowState = FormWindowState.Minimized; this.ShowInTaskbar = false; callLogin(); this.WindowState = FormWindowState.Normal; this.ShowInTaskbar = true;            this.Visible = true;            this.Show();            this.BringToFront(); **/
             //for (int x = 0; x < 52; x++) { Console.WriteLine(game.getDeck().deckArray[x]); } /** test deck output **/
-            pnlHelp.Visible = false;           
-            playGame();
-            populateTable();
+            pnlGame.Visible = false;
+            pnlHelp.Visible = false;
+            pnlIntro.Visible = true;
+            pnlIntro.BringToFront();
+            callForm2();
+
         }
          
         private void populateTable()                                            // Needs GUI enhancement 
         {
+            pnlIntro.Visible = false;
+            pnlGame.Visible = true;
+
             game.getPlayer1().setId(playerId);
             game.getPlayer1().setName();
             lblPlayer1Name.Text = game.getPlayer1().getName();
@@ -269,12 +275,26 @@ namespace dw6n1449
 
         public void callForm2()
         {
-            //this.Hide();       
+            Hide();       
             form2.Show();
             form2.BringToFront();
         }
 
         public void setPlayerId(int id) { playerId = id; }
 
+        private void btnIntro_Click(object sender, EventArgs e)
+        {
+            if(playerId != 0)
+            {
+                playGame();
+                pnlIntro.SendToBack();
+                pnlGame.BringToFront();
+                populateTable();
+            }
+            else
+            {
+                lblIntroOutput.Text = "Sorry, we'll need to see your ID before you may enter.";
+            }
+        }
     }//form
 }
