@@ -98,13 +98,10 @@
             this.label44 = new System.Windows.Forms.Label();
             this.btnHelp = new System.Windows.Forms.Button();
             this.pnlGame = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblPlayer1Name = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.pnlHelp = new System.Windows.Forms.Panel();
-            this.btnHelpEnd = new System.Windows.Forms.Button();
-            this.btnHelpNext = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.pnlDealerCard2 = new System.Windows.Forms.Panel();
             this.label45 = new System.Windows.Forms.Label();
             this.lblDealerCard2value = new System.Windows.Forms.Label();
@@ -132,6 +129,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pnlHelp = new System.Windows.Forms.Panel();
+            this.btnHelpEnd = new System.Windows.Forms.Button();
+            this.btnHelpNext = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pnlIntro = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
             this.pnlPlayerCard2.SuspendLayout();
             this.pnlPlayerCard3.SuspendLayout();
             this.pnlPlayerCard4.SuspendLayout();
@@ -140,10 +145,11 @@
             this.pnlDealerCard4.SuspendLayout();
             this.pnlDealerCard3.SuspendLayout();
             this.pnlGame.SuspendLayout();
-            this.pnlHelp.SuspendLayout();
             this.pnlDealerCard2.SuspendLayout();
             this.pnlDealerCard1.SuspendLayout();
             this.pnlPlayerCard1.SuspendLayout();
+            this.pnlHelp.SuspendLayout();
+            this.pnlIntro.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -825,6 +831,7 @@
             // pnlGame
             // 
             this.pnlGame.BackColor = System.Drawing.Color.LimeGreen;
+            this.pnlGame.Controls.Add(this.lblPlayer1Name);
             this.pnlGame.Controls.Add(this.label18);
             this.pnlGame.Controls.Add(this.label13);
             this.pnlGame.Controls.Add(this.label11);
@@ -849,24 +856,14 @@
             this.pnlGame.Size = new System.Drawing.Size(467, 463);
             this.pnlGame.TabIndex = 30;
             // 
-            // label11
+            // lblPlayer1Name
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 446);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 13);
-            this.label11.TabIndex = 30;
-            this.label11.Text = "game panel";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(10, 248);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(86, 16);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "Player Hand:";
+            this.lblPlayer1Name.AutoSize = true;
+            this.lblPlayer1Name.Location = new System.Drawing.Point(172, 446);
+            this.lblPlayer1Name.Name = "lblPlayer1Name";
+            this.lblPlayer1Name.Size = new System.Drawing.Size(41, 13);
+            this.lblPlayer1Name.TabIndex = 33;
+            this.lblPlayer1Name.Text = "label27";
             // 
             // label18
             // 
@@ -878,47 +875,24 @@
             this.label18.TabIndex = 32;
             this.label18.Text = "Dealer Hand:";
             // 
-            // pnlHelp
+            // label13
             // 
-            this.pnlHelp.BackColor = System.Drawing.Color.LimeGreen;
-            this.pnlHelp.BackgroundImage = global::dw6n1449.Properties.Resources.help0;
-            this.pnlHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlHelp.Controls.Add(this.btnHelpEnd);
-            this.pnlHelp.Controls.Add(this.btnHelpNext);
-            this.pnlHelp.Controls.Add(this.label12);
-            this.pnlHelp.Location = new System.Drawing.Point(475, 3);
-            this.pnlHelp.Name = "pnlHelp";
-            this.pnlHelp.Size = new System.Drawing.Size(467, 463);
-            this.pnlHelp.TabIndex = 31;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(10, 248);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(86, 16);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Player Hand:";
             // 
-            // btnHelpEnd
+            // label11
             // 
-            this.btnHelpEnd.Location = new System.Drawing.Point(346, 431);
-            this.btnHelpEnd.Name = "btnHelpEnd";
-            this.btnHelpEnd.Size = new System.Drawing.Size(75, 23);
-            this.btnHelpEnd.TabIndex = 33;
-            this.btnHelpEnd.Text = "Got It";
-            this.btnHelpEnd.UseVisualStyleBackColor = true;
-            this.btnHelpEnd.Click += new System.EventHandler(this.btnHelpEnd_Click);
-            // 
-            // btnHelpNext
-            // 
-            this.btnHelpNext.Location = new System.Drawing.Point(346, 402);
-            this.btnHelpNext.Name = "btnHelpNext";
-            this.btnHelpNext.Size = new System.Drawing.Size(75, 23);
-            this.btnHelpNext.TabIndex = 32;
-            this.btnHelpNext.Text = "Next =>";
-            this.btnHelpNext.UseVisualStyleBackColor = true;
-            this.btnHelpNext.Click += new System.EventHandler(this.btnHelpNext_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 446);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 13);
-            this.label12.TabIndex = 31;
-            this.label12.Text = "help panel";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 446);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 13);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "game panel";
             // 
             // pnlDealerCard2
             // 
@@ -1190,12 +1164,94 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Suit:";
             // 
+            // pnlHelp
+            // 
+            this.pnlHelp.BackColor = System.Drawing.Color.LimeGreen;
+            this.pnlHelp.BackgroundImage = global::dw6n1449.Properties.Resources.help0;
+            this.pnlHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlHelp.Controls.Add(this.btnHelpEnd);
+            this.pnlHelp.Controls.Add(this.btnHelpNext);
+            this.pnlHelp.Controls.Add(this.label12);
+            this.pnlHelp.Location = new System.Drawing.Point(1, 3);
+            this.pnlHelp.Name = "pnlHelp";
+            this.pnlHelp.Size = new System.Drawing.Size(467, 463);
+            this.pnlHelp.TabIndex = 31;
+            // 
+            // btnHelpEnd
+            // 
+            this.btnHelpEnd.Location = new System.Drawing.Point(346, 431);
+            this.btnHelpEnd.Name = "btnHelpEnd";
+            this.btnHelpEnd.Size = new System.Drawing.Size(75, 23);
+            this.btnHelpEnd.TabIndex = 33;
+            this.btnHelpEnd.Text = "Got It";
+            this.btnHelpEnd.UseVisualStyleBackColor = true;
+            this.btnHelpEnd.Click += new System.EventHandler(this.btnHelpEnd_Click);
+            // 
+            // btnHelpNext
+            // 
+            this.btnHelpNext.Location = new System.Drawing.Point(346, 402);
+            this.btnHelpNext.Name = "btnHelpNext";
+            this.btnHelpNext.Size = new System.Drawing.Size(75, 23);
+            this.btnHelpNext.TabIndex = 32;
+            this.btnHelpNext.Text = "Next =>";
+            this.btnHelpNext.UseVisualStyleBackColor = true;
+            this.btnHelpNext.Click += new System.EventHandler(this.btnHelpNext_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 446);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(56, 13);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "help panel";
+            // 
+            // pnlIntro
+            // 
+            this.pnlIntro.BackColor = System.Drawing.Color.Fuchsia;
+            this.pnlIntro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlIntro.Controls.Add(this.button1);
+            this.pnlIntro.Controls.Add(this.button2);
+            this.pnlIntro.Controls.Add(this.label27);
+            this.pnlIntro.Location = new System.Drawing.Point(485, 3);
+            this.pnlIntro.Name = "pnlIntro";
+            this.pnlIntro.Size = new System.Drawing.Size(467, 463);
+            this.pnlIntro.TabIndex = 32;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(346, 431);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Got It";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(346, 402);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "Next =>";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(3, 446);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(56, 13);
+            this.label27.TabIndex = 31;
+            this.label27.Text = "help panel";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(986, 478);
+            this.Controls.Add(this.pnlIntro);
             this.Controls.Add(this.pnlHelp);
             this.Controls.Add(this.pnlGame);
             this.Name = "Form1";
@@ -1216,14 +1272,16 @@
             this.pnlDealerCard3.PerformLayout();
             this.pnlGame.ResumeLayout(false);
             this.pnlGame.PerformLayout();
-            this.pnlHelp.ResumeLayout(false);
-            this.pnlHelp.PerformLayout();
             this.pnlDealerCard2.ResumeLayout(false);
             this.pnlDealerCard2.PerformLayout();
             this.pnlDealerCard1.ResumeLayout(false);
             this.pnlDealerCard1.PerformLayout();
             this.pnlPlayerCard1.ResumeLayout(false);
             this.pnlPlayerCard1.PerformLayout();
+            this.pnlHelp.ResumeLayout(false);
+            this.pnlHelp.PerformLayout();
+            this.pnlIntro.ResumeLayout(false);
+            this.pnlIntro.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1334,6 +1392,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblPlayer1Name;
+        private System.Windows.Forms.Panel pnlIntro;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label27;
     }
 }
 

@@ -13,38 +13,55 @@ namespace dw6n1449
 {
     public partial class Form2 : Form
     {
+        static String connectionString = "Server=localhost;Port=3306;database=blackjack;Uid=root;password=secret";
+        MySqlConnection conn = new MySqlConnection(connectionString);
+        MySqlDataReader rdr;
         public Form2()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int playerId = 0;
-            if (tbxName.Text != null && tbxPassword.Text != null)
+            tryLogin(tbxName.Text.ToString(), tbxPassword.Text.ToString());
+            //Form1.populateTable();
+            this.Close();
+        }
+
+        public void tryLogin(string name, string pass)
+        {
+            if (name != null && pass != null)
             {
-                string name = tbxName.Text;
-                string password = tbxPassword.Text;
-
-                String connectionString = "Server=localhost;Port=3306;database=blackjack;Uid=root;password=secret";
-                MySqlConnection conn = new MySqlConnection(connectionString);
-
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM PLAYER WHERE name=" + name + " AND password=" + password;
+                cmd.CommandText = "SELECT * FROM PLAYER WHERE name='" + name + "' AND pass='" + pass + "'"; 
                 conn.Open();
-               // MySqlDataReader rdr = cmd.ExecuteReader();
-              //  if (rdr.HasRows)
-             //   {
-              //      while (rdr.Read())
-              //      {
+                rdr = cmd.ExecuteReader();
+                if (rdr.HasRows)
+                {
+                    while (rdr.Read())
+                    {
+                        Form1.playerId = Convert.ToInt32(rdr["id"]);
+                    }
+                }
+                else
+                {
+                    conn.Close();
+                    conn.Open();
+                    string queryString = "INSERT INTO PLAYER (name, pass) VALUES('" + name + "','" + pass + "')";
+                    cmd = new MySqlCommand(queryString, conn);
+                    cmd.ExecuteReader();
+                    conn.Close();
 
-
-              //      }
-                    this.Close();
-             //   }
-                
-            }         
-        }// button
-
+                    cmd = conn.CreateCommand();
+                    cmd.CommandText = "SELECT * FROM PLAYER WHERE name='" + name + "' AND pass='" + pass + "'";
+                    conn.Open();
+                    rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        Form1.playerId = Convert.ToInt32(rdr["id"]);
+                    }
+                }
+            }
+        }// tryLogin
     }
 }

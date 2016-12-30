@@ -12,7 +12,10 @@ namespace dw6n1449
         static String connectionString = "Server=localhost;Port=3306;database=blackjack;Uid=root;password=secret";
         MySqlConnection conn = new MySqlConnection(connectionString);
 
-        private int[] playerHand = new int[6];
+        private int id;
+        private string name;
+
+        private int[] playerHand = new int[5];
         private int totCards = 0;
         private int handScore;
 
@@ -21,6 +24,24 @@ namespace dw6n1449
         private Card card3 = new Card();
         private Card card4 = new Card();
         private Card card5 = new Card();
+
+        public int getId() { return id; }
+        public void setId(int id) { this.id = id; }
+
+        public string getName() { return name; }
+        public void setName()
+        {
+            MySqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "SELECT * FROM PLAYER where id=" + getId();
+            conn.Open();
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                this.setName(rdr["name"].ToString());
+            }
+            conn.Close();
+        }
+        public void setName(string name) { this.name = name; }
 
         public int getPlayerHand(int card) { return playerHand[card]; }
         public void setPlayerHand(int[] playerHand) { this.playerHand = playerHand; }

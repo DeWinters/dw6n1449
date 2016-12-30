@@ -12,7 +12,6 @@ namespace dw6n1449
         static String connectionString = "Server=localhost;Port=3306;database=blackjack;Uid=root;password=secret";
         MySqlConnection conn = new MySqlConnection(connectionString);
 
-        public Login login = new Login();
         private Boolean playerTurn;
 
         Deck deck = new Deck();
@@ -115,15 +114,6 @@ namespace dw6n1449
             }
    
         }
-
-        public void callLoginPage()                                 // MISSING
-        {
-            login.callForm2();
-        }
-
-
-
-
 
     }
 }

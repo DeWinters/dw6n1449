@@ -15,36 +15,33 @@ namespace dw6n1449
     {     
         static string imgResPrefix = "C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\";
         static string helpResPrefix = "C:\\Users\\Administrator\\Source\\Repos\\dw6n1449\\dw6n1449\\Resources\\help";
-
+        public static int playerId;
         Game game = new Game();
         int helpPageIndex = 0;
 
+        Form2 form2 = new Form2();     
+
         public Form1()
         {
-            game.login.callForm2();
-            this.WindowState = FormWindowState.Minimized;
 
             InitializeComponent();
+
+            callForm2();
+            this.SendToBack();
+           // this.WindowState = FormWindowState.Minimized;
             /**this.WindowState = FormWindowState.Minimized; this.ShowInTaskbar = false; callLogin(); this.WindowState = FormWindowState.Normal; this.ShowInTaskbar = true;            this.Visible = true;            this.Show();            this.BringToFront(); **/
             //for (int x = 0; x < 52; x++) { Console.WriteLine(game.getDeck().deckArray[x]); } /** test deck output **/
-            pnlHelp.Visible = false;
-            pnlPlayerCard3.Visible = false;
-            pnlPlayerCard4.Visible = false;
-            pnlPlayerCard5.Visible = false;
-            pnlDealerCard1.Visible = false;
-            pnlDealerCard2.Visible = false;
-            pnlDealerCard3.Visible = false;
-            pnlDealerCard4.Visible = false;
-            pnlDealerCard5.Visible = false;
-            lblDealerScore.Visible = false;
-
-            
+            pnlHelp.Visible = false;           
             playGame();
             populateTable();
         }
          
         private void populateTable()                                            // Needs GUI enhancement 
         {
+            game.getPlayer1().setId(playerId);
+            game.getPlayer1().setName();
+            lblPlayer1Name.Text = game.getPlayer1().getName();
+
             lblCondition.Text = game.getFeedback();
 
             if(game.getPlayerTurn() == true)
@@ -84,6 +81,7 @@ namespace dw6n1449
                                                                     game.getPlayer1().getCard3().getSuit() + ".jpg");
                 pnlPlayerCard3.Visible = true;
             }
+            else { pnlPlayerCard3.Visible = false; }
 
             game.getPlayer1().setCard4(game.populateCard(game.getPlayer1().getPlayerHand(3)));
             lblId4.Text = game.getPlayer1().getPlayerHand(3).ToString();
@@ -96,6 +94,7 @@ namespace dw6n1449
                                                                     game.getPlayer1().getCard4().getSuit() + ".jpg");
                 pnlPlayerCard4.Visible = true;
             }
+            else { pnlPlayerCard4.Visible = false; }
 
             game.getPlayer1().setCard5(game.populateCard(game.getPlayer1().getPlayerHand(4)));
             lblId5.Text = game.getPlayer1().getPlayerHand(4).ToString();
@@ -108,6 +107,7 @@ namespace dw6n1449
                                                                     game.getPlayer1().getCard5().getSuit() + ".jpg");
                 pnlPlayerCard5.Visible = true;
             }
+            else { pnlPlayerCard5.Visible = false; }
 
             game.getPlayer1().setHandScore();
             lblPlayerScore.Text = game.getPlayer1().getHandScore().ToString();
@@ -125,6 +125,7 @@ namespace dw6n1449
                                                                     game.getDealer().getCard1().getSuit() + ".jpg");
                 pnlDealerCard1.Visible = true;
             }
+            else { pnlDealerCard1.Visible = false; }
 
             game.getDealer().setCard2(game.populateCard(game.getDealer().getPlayerHand(1)));
             lblDealerCard2id.Text = game.getDealer().getPlayerHand(1).ToString();
@@ -137,6 +138,10 @@ namespace dw6n1449
                                                                     game.getDealer().getCard2().getSuit() + ".jpg");
                 pnlDealerCard2.Visible = true;
             }
+            else {
+                pnlDealerCard2.BackgroundImage = Image.FromFile(imgResPrefix + "cardback.jpg");
+            }
+
 
             game.getDealer().setCard3(game.populateCard(game.getDealer().getPlayerHand(2)));
             lblDealerCard3id.Text = game.getDealer().getPlayerHand(2).ToString();
@@ -149,6 +154,8 @@ namespace dw6n1449
                                                                     game.getDealer().getCard3().getSuit() + ".jpg");
                 pnlDealerCard3.Visible = true;
             }
+            else { pnlDealerCard3.Visible = false; }
+
 
             game.getDealer().setCard4(game.populateCard(game.getDealer().getPlayerHand(3)));
             lblDealerCard4id.Text = game.getDealer().getPlayerHand(3).ToString();
@@ -161,6 +168,8 @@ namespace dw6n1449
                                                                     game.getDealer().getCard4().getSuit() + ".jpg");
                 pnlDealerCard4.Visible = true;
             }
+            else { pnlDealerCard4.Visible = false; }
+
 
             game.getDealer().setCard5(game.populateCard(game.getDealer().getPlayerHand(4)));
             lblDealerCard5id.Text = game.getDealer().getPlayerHand(4).ToString();
@@ -173,6 +182,7 @@ namespace dw6n1449
                                                                     game.getDealer().getCard5().getSuit() + ".jpg");
                 pnlDealerCard5.Visible = true;
             }
+            else { pnlDealerCard5.Visible = false; }
 
             game.getDealer().setHandScore();
             lblDealerScore.Text = game.getDealer().getHandScore().ToString();
@@ -254,9 +264,17 @@ namespace dw6n1449
             pnlDealerCard2.BackgroundImage = Image.FromFile(imgResPrefix + "cardBack.jpg");
             pnlDealerCard2.Visible = true;
             game.playerActions();
-            populateTable();
-              
+            populateTable();              
         }
+
+        public void callForm2()
+        {
+            //this.Hide();       
+            form2.Show();
+            form2.BringToFront();
+        }
+
+        public void setPlayerId(int id) { playerId = id; }
 
     }//form
 }
