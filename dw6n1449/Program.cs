@@ -14,9 +14,13 @@ namespace dw6n1449
         [STAThread]
         static void Main()
         {
+            Game game2 = new Game();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form2());
             Application.Run(new Form1());
+
+            
         }
     }
 }

@@ -463,6 +463,16 @@ namespace dw6n1449.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blackjackback {
+            get {
+                object obj = ResourceManager.GetObject("blackjackback", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cardBack {
             get {
                 object obj = ResourceManager.GetObject("cardBack", resourceCulture);
