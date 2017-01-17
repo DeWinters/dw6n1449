@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace dw6n1449
 {
@@ -19,11 +12,8 @@ namespace dw6n1449
         Game game = new Game();
         int helpPageIndex = 0;
 
-        //Form2 form2 = new Form2();     
-
         public Form1()
         {
-
             InitializeComponent();           
 
             pnlGame.Visible = false;
@@ -154,7 +144,6 @@ namespace dw6n1449
             {
                 lblDealerScore.Visible = false;
             }
-
         }
 
         private void btnHit_Click(object sender, EventArgs e)                   // Proto 
@@ -211,7 +200,7 @@ namespace dw6n1449
             }
         }
 
-        public void playGame()                                                  // Working 1 Cycle 
+        public void playGame()                                                 
         {
             game.getPlayer1().hit(game.getDeck().dealCard());
             game.getDealer().hit(game.getDeck().dealCard());
@@ -221,14 +210,7 @@ namespace dw6n1449
             game.playerActions();
             populateTable();              
         }
-        /*
-        public void callForm2()
-        {
-            Hide();       
-            form2.Show();
-            form2.BringToFront();
-        }
-*/
+
         public void setPlayerId(int id) { playerId = id; }
 
         private void btnIntro_Click(object sender, EventArgs e)
@@ -254,7 +236,7 @@ namespace dw6n1449
 
         private void btnLeave_Click(object sender, EventArgs e)
         {
-            this.Close(); // replace with graceful exit.
+            this.Close(); 
         }
 
         private void btnPlay_Click(object sender, EventArgs e)

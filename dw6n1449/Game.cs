@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
 namespace dw6n1449
@@ -53,8 +49,7 @@ namespace dw6n1449
             else
             {
                 compareScores();
-            }
-            
+            } 
         }
 
         public void compareScores()                                 // Proto 
@@ -111,9 +106,7 @@ namespace dw6n1449
             {                                                               // draw? actions
                 setFeedback("Would you like to hit or stay?");
                 playerTurn = true;
-            }
-   
+            }  
         }
-
     }
 }

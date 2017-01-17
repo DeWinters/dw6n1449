@@ -24,7 +24,6 @@ namespace dw6n1449
         private void button1_Click(object sender, EventArgs e)
         {
             tryLogin(tbxName.Text.ToString(), tbxPassword.Text.ToString());
-            //Form1.populateTable();
             this.Close();
         }
 

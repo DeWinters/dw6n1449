@@ -13,7 +13,6 @@ namespace dw6n1449
         private int val;
         private String face;
         private String suit;
-        private int place;
 
         public int getId() { return id; }
         public void setId(int id) { this.id = id; }
@@ -26,10 +25,5 @@ namespace dw6n1449
 
         public String getSuit() { return suit; }
         public void setSuit(string suit) { this.suit = suit; } 
-        
-        public int getPlace() { return place; }
-        public void setPlace(int place) { this.place = place; }   // needs random number
-
-
     }
 }

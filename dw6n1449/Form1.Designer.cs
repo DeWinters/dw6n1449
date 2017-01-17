@@ -43,6 +43,7 @@
             this.pnlDealerCard5 = new System.Windows.Forms.Panel();
             this.pnlPlayerCard5 = new System.Windows.Forms.Panel();
             this.pnlDealerCard4 = new System.Windows.Forms.Panel();
+            this.pnlPlayerCard4 = new System.Windows.Forms.Panel();
             this.pnlDealerCard3 = new System.Windows.Forms.Panel();
             this.pnlPlayerCard3 = new System.Windows.Forms.Panel();
             this.pnlDealerCard2 = new System.Windows.Forms.Panel();
@@ -58,7 +59,6 @@
             this.btnHelpEnd = new System.Windows.Forms.Button();
             this.btnHelpNext = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.pnlPlayerCard4 = new System.Windows.Forms.Panel();
             this.pnlIntro.SuspendLayout();
             this.pnlGame.SuspendLayout();
             this.pnlHelp.SuspendLayout();
@@ -141,7 +141,7 @@
             this.pnlGame.Controls.Add(this.btnHit);
             this.pnlGame.Controls.Add(this.lblCondition);
             this.pnlGame.Controls.Add(this.lblPlayerScore);
-            this.pnlGame.Location = new System.Drawing.Point(0, 0);
+            this.pnlGame.Location = new System.Drawing.Point(1, 1);
             this.pnlGame.Name = "pnlGame";
             this.pnlGame.Size = new System.Drawing.Size(818, 550);
             this.pnlGame.TabIndex = 30;
@@ -208,6 +208,7 @@
             // pnlDealerCard5
             // 
             this.pnlDealerCard5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlDealerCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlDealerCard5.Location = new System.Drawing.Point(325, 263);
             this.pnlDealerCard5.Name = "pnlDealerCard5";
             this.pnlDealerCard5.Size = new System.Drawing.Size(40, 55);
@@ -225,14 +226,25 @@
             // pnlDealerCard4
             // 
             this.pnlDealerCard4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlDealerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlDealerCard4.Location = new System.Drawing.Point(369, 263);
             this.pnlDealerCard4.Name = "pnlDealerCard4";
             this.pnlDealerCard4.Size = new System.Drawing.Size(40, 55);
             this.pnlDealerCard4.TabIndex = 27;
             // 
+            // pnlPlayerCard4
+            // 
+            this.pnlPlayerCard4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlPlayerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlPlayerCard4.Location = new System.Drawing.Point(469, 343);
+            this.pnlPlayerCard4.Name = "pnlPlayerCard4";
+            this.pnlPlayerCard4.Size = new System.Drawing.Size(75, 100);
+            this.pnlPlayerCard4.TabIndex = 23;
+            // 
             // pnlDealerCard3
             // 
             this.pnlDealerCard3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlDealerCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlDealerCard3.Location = new System.Drawing.Point(412, 263);
             this.pnlDealerCard3.Name = "pnlDealerCard3";
             this.pnlDealerCard3.Size = new System.Drawing.Size(40, 55);
@@ -378,15 +390,6 @@
             this.label12.TabIndex = 31;
             this.label12.Text = "help panel";
             // 
-            // pnlPlayerCard4
-            // 
-            this.pnlPlayerCard4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlPlayerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlPlayerCard4.Location = new System.Drawing.Point(469, 343);
-            this.pnlPlayerCard4.Name = "pnlPlayerCard4";
-            this.pnlPlayerCard4.Size = new System.Drawing.Size(75, 100);
-            this.pnlPlayerCard4.TabIndex = 23;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,7 +400,7 @@
             this.Controls.Add(this.pnlGame);
             this.Controls.Add(this.pnlHelp);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "DFEitech Robot Blackjack";
             this.pnlIntro.ResumeLayout(false);
             this.pnlIntro.PerformLayout();
             this.pnlGame.ResumeLayout(false);

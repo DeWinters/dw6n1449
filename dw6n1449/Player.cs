@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
 namespace dw6n1449
@@ -14,11 +10,9 @@ namespace dw6n1449
 
         private int id;
         private string name;
-
         private int[] playerHand = new int[5];
         private int totCards = 0;
         private int handScore;
-
         private Card card1 = new Card();
         private Card card2 = new Card();
         private Card card3 = new Card();
