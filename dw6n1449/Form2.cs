@@ -18,7 +18,8 @@ namespace dw6n1449
         MySqlDataReader rdr;
         public Form2()
         {
-            InitializeComponent();           
+            InitializeComponent();  
+            //Pacale was here         
         }
 
         private void button1_Click(object sender, EventArgs e)
